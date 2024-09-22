@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+  <test name="Test">
+  <groups>
+  <define name = "dailybuild">
+  <include name = "sanity"/>
+  <include name = "functional"/>
+  </define>
+  <define name = "weeklybuild">
+  <include name = "sanity"/>
+  <include name = "smoke"/>
+  <include name = "regression"/>
+  <include name = "functional"/>
+  </define>
+  <define name = "everybuild">
+  <include name = "smoke"/>
+  </define>
+  <run>
+  <include name = "dailybuild"/>
+  </run>
+  </groups>
+ <!--  <groups>
+  <run>
+  <include name="smoke"/>
+  <include name = "functional"/>
+  <exclude name = "sanity"/>
+  </run>
+  </groups> -->
+    <classes>
+      <class name="testNG.TestNGclass1"/>
+      <class name="testNG.TestNGclass2"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
